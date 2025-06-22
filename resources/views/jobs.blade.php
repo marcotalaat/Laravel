@@ -12,4 +12,8 @@
         </a>
     @endforeach
     </div>
+
+    <div class='my-5'>
+        {{ $jobs->links(); }}
+    </div>
 </x-layout>
