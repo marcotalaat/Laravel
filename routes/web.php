@@ -19,7 +19,9 @@ Route::get('/contact', function(){
 });
 
 Route::get('/jobs', function() {
-    $jobs = Job::with('employer')->paginate(3);
+    $jobs = Job::with('employer')->paginate(
+        $perPage = 3, $columns = ['*'], $pageName = 'jobs' // If i need to change query string
+    );
     return view('jobs', [
         'jobs' => $jobs
     ]);
